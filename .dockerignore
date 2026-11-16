@@ -1,0 +1,19 @@
+# ── 秘密情報(ログイン済みのセッション。箱に入れると、箱を共有したときに漏れる) ──
+auth_state.json
+cookies*.json
+
+# ── 収集データ・ログ・出力(お手元のフォルダに残す。箱には入れない) ──
+accounts*.csv
+accounts*.backup_*
+*.lock
+scraper.log
+output
+output_*
+layout_cache.json
+
+# ── 不要なもの ──
+.git
+.venv
+__pycache__
+*.pyc
+*.tmp

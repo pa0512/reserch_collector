@@ -1,0 +1,25 @@
+# ===== 秘密情報(絶対にコミットしない) =====
+auth_state.json
+*auth_state*.json
+cookies*.json
+*cookie*.json
+.env
+.env.*
+
+# ===== 収集データ・ログ(共有しない。共有する場合は意図的に追加する) =====
+accounts*.csv
+*.csv
+*.lock
+*.log
+scraper.log
+
+# ===== 出力・一時ファイル =====
+output/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

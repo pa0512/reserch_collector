@@ -1,0 +1,9 @@
+# 収集システムの、依存パッケージ(playwright だけ)。
+# Python 3.10 以上が必要(動作確認は Python 3.12)。
+#
+# インストール後、ブラウザ本体の取得も必要(setup_server.sh が自動で行う):
+#     python -m playwright install chromium
+#
+# 版は固定している(ブラウザの起動を、この版で確認したため)。
+
+playwright==1.63.0

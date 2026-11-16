@@ -1,0 +1,30 @@
+# compose.yaml
+#
+# Docker Desktop で、このシステムを動かすための設定。
+# 使い方は DOCKER.md を参照。
+#
+#   docker compose build                                  箱を作る(最初に1回)
+#   docker compose run --rm app check                    環境の確認
+#   docker compose run --rm app collect --max-accounts 3 収集(3件だけ試す)
+services:
+  app:
+    image: x-research:latest
+    build: .
+
+    # この(お手元の)フォルダを、箱の中の /app として使う。
+    # accounts.csv・scraper.log・output・auth_state.json は、このフォルダに残る
+    # (箱を消しても、データは消えない。surveys.py などを編集すると、すぐ反映される)。
+    volumes:
+      - .:/app
+
+    # ブラウザ(Chromium)は、共有メモリを多く使う。既定の小さい値だと、
+    # 「ページがクラッシュした」というエラーで落ちることがあるため、大きくする。
+    shm_size: "1gb"
+
+    # 終了の合図(docker stop / Ctrl+C)を、中のプログラムに、正しく伝える。
+    init: true
+
+    environment:
+      - TZ=Asia/Tokyo
+      # ヘッドレスで実行したい場合は、次の行の先頭の # を外す
+      # - X_SCRAPER_HEADLESS=1

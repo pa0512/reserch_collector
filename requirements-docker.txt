@@ -1,0 +1,4 @@
+# Docker のイメージに入れる、パッケージの版(固定)。
+# 動作確認済み(Linux・Python 3.12 のサンドボックスで、この版でブラウザの起動を確認した)。
+# 版を変える場合は、イメージを作り直す(docker compose build --no-cache)。
+playwright==1.63.0
